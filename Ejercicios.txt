@@ -1,0 +1,59 @@
+UT9_TA3:
+
+Función encuentraPivote:
+
+Opción 1:
+
+Seleccionar el primer elemento del Array,
+
+
+Tiempo de ejecución O(1)
+
+Ventajas: Es muy simple y rápido de implementar
+
+Desventajas: Puede llevar al peor caso O(n al cuadrado) si el array ya está ordenado o casi ordenado.
+
+Pseudocódigo:
+
+funcion encuentraPivote(i, j: entero): entero
+    retornar i;
+fin función
+
+
+Opción 2:
+
+
+Selección del Elemento Medio como Pivote:
+
+Tiempo de ejecución O(1)
+
+Ventajas: Reduce la probabilidad de encontrar el peor caso en comparación con la selección del primer elemento.
+
+Desventajas: Todavía puede no ser ideal si el array tiene patrones específicos
+
+
+funcion encuentraPivote(i, j: entero): entero
+    retornar i + (j - i) / 2;
+fin funcion
+
+
+Opción 3:
+
+Seleccionar la mediana de 3:
+
+Tiempo de ejecución O(1)
+
+Ventajas: Proporciona una partición más equilibrada, reduciendo la probabilidad de caer en el peor caso.
+
+Desventajas: Ligeramente más complejo de implementar y marginalmente más costoso en tiempo de ejecución comparado con las dos anteriores.
+
+funcion encuentraPivote(i, j: entero): entero
+    m := i + (j - i) / 2;
+    si V[i] <= V[m] <= V[j] o V[j] <= V[m] <= V[i] entonces
+        retornar m;
+    sino si V[m] <= V[i] <= V[j] o V[j] <= V[i] <= V[m] entonces
+        retornar i;
+    sino
+        retornar j;
+    fin si;
+fin funcion
